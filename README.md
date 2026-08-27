@@ -14,7 +14,7 @@
 「装进去」和「打开它」是两件事，缺一不可：
 
 ```sh
-dsh plugin --profile <name> add github:EasyTZ/dsh-git#v0.2.1
+dsh plugin --profile <name> add github:EasyTZ/dsh-git#v0.2.2
 ```
 
 > **必须写 GitHub 地址，不能只写包名。** `dsh plugin add` 会把参数原样转给 pnpm，只写 `dsh-git` 会去 npm registry 找同名包 —— 那可能是别人的包（`dsh-git` 在 npm 上就已被他人占用）。换个 tag 就是换版本；想跟最新可以用 `#main`，但**不建议**：钉 tag 才能复现。
