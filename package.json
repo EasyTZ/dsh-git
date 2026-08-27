@@ -1,6 +1,6 @@
 {
   "name": "dsh-git",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Visual Git panel: changed files, staging, commits, and recent history",
   "type": "module",
   "main": "lib/index.js",
@@ -32,5 +32,21 @@
     "@deepseek-ai/cordis": "^4.0.1",
     "@deepseek-ai/dsh-host-webserver": "^0.1.1-rc.2",
     "@deepseek-ai/dsh-workspace": "^0.1.1-rc.2"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "dsh",
+    "deepseek",
+    "git",
+    "sidebar-panel"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EasyTZ/dsh-git.git"
+  },
+  "homepage": "https://github.com/EasyTZ/dsh-git#readme",
+  "bugs": {
+    "url": "https://github.com/EasyTZ/dsh-git/issues"
   }
 }
