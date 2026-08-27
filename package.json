@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-git",
+  "name": "dsh-git",
   "version": "0.1.0",
   "description": "Visual Git panel: changed files, staging, commits, and recent history",
   "type": "module",
