@@ -1,6 +1,6 @@
 {
   "name": "dsh-git",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "Visual Git panel: changed files, staging, commits, push, branches, and per-commit detail",
   "type": "module",
   "main": "lib/index.js",
@@ -12,6 +12,9 @@
       "default": "./lib/client.js"
     },
     "./package.json": "./package.json"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.js"
   },
   "dsh": {
     "client": {

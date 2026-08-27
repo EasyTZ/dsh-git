@@ -1,0 +1,26 @@
+# 插件仓库的最小 CI：跑 lib/pure.js 的单测。
+#
+# 为什么只有这一个 job：本插件无编译、零运行时依赖，`lib/index.js` 需要
+# @deepseek-ai/cordis 与内核提供的 webServer / workspaceRegistry 才能加载，在 CI
+# 里起一个真内核不划算。可测的那部分（git 输出解析、错误分类）已经拆进 pure.js，
+# 那也正是最容易改坏、且改坏了不会报错只会安静显示错数字的部分。
+name: test
+
+on:
+  push:
+    branches: ["**"]
+    tags-ignore: ["**"]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      # 不跑 npm ci：没有 lockfile，也没有需要安装的依赖（peerDependencies 由
+      # 内核提供，测试只 import 零依赖的 pure.js）。
+      - run: npm test
