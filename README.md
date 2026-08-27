@@ -2,7 +2,7 @@
 
 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)（下称 dsh）的第三方插件：在侧边栏提供一个 **Git 可视化面板**。
 
-改动 / 未跟踪文件、暂存与取消暂存、写提交信息并提交、推送、切换分支、查看最近提交历史（区分已推送 / 未推送）、撤销最近一次提交（未推送 reset、已推送 revert）——常用 Git 操作点几下就完事，不用离开 dsh 也不用记命令。
+改动 / 未跟踪文件、暂存与取消暂存、写提交信息并提交、推送、切换分支、查看最近提交历史（区分已推送 / 未推送）、**点开任意一条提交看完整详情**（完整提交信息、改动了哪些文件、各自增删多少行）、撤销最近一次提交（未推送 reset、已推送 revert）——常用 Git 操作点几下就完事，不用离开 dsh 也不用记命令。
 
 ## 前置要求
 
@@ -14,7 +14,7 @@
 「装进去」和「打开它」是两件事，缺一不可：
 
 ```sh
-dsh plugin --profile <name> add github:EasyTZ/dsh-git#v0.1.1
+dsh plugin --profile <name> add github:EasyTZ/dsh-git#v0.2.0
 ```
 
 > **必须写 GitHub 地址，不能只写包名。** `dsh plugin add` 会把参数原样转给 pnpm，只写 `dsh-git` 会去 npm registry 找同名包 —— 那可能是别人的包（`dsh-git` 在 npm 上就已被他人占用）。换个 tag 就是换版本；想跟最新可以用 `#main`，但**不建议**：钉 tag 才能复现。
