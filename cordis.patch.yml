@@ -1,0 +1,13 @@
+# dsh-git 的 bundle 层：让 `dsh plugin add dsh-git` 装完就能用。没有它，dsh 的
+# plugin 命令只打印
+#   warning: dsh-git declares no dsh.bundle — installed as a plain dependency
+# 然后把包装进去、**永远不激活**，用户得自己手写 patch 才能看到面板。
+#
+# 对 dsDesktop 发行版惰性：桌面端只往 dsh 的 dependencies 登记，不碰 profile 的
+# `dsh.profile.bundles`，激活由启动时的 `--patch` overlay 提供。id 与 overlay
+# 取同一个值，两条路径万一同时生效时失败是响亮的 duplicate loader entry id，
+# 而不是插件被静默挂载两次、路由重复注册。
+
+- insert:
+    - id: dsdesktop-git
+      name: 'dsh-git'
