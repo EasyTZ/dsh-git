@@ -10,4 +10,4 @@
 
 - insert:
     - id: dsdesktop-git
-      name: 'dsh-git'
+      name: '@easytz/dsh-git'
