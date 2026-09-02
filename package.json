@@ -1,6 +1,6 @@
 {
   "name": "@easytz/dsh-git",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "Visual Git panel: changed files, staging, commits, push, branches, and per-commit detail",
   "type": "module",
   "main": "lib/index.js",

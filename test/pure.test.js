@@ -193,3 +193,29 @@ test("classifyGitError: 认不出来的错误退回第一行，不能是空串",
   assert.strictEqual(r.message, "fatal: 某种我们没见过的失败");
   assert.ok(classifyGitError({}).message.length > 0, "什么都没有时也要给一句话");
 });
+
+// ── 侧边栏 footer 布局 ──────────────────────────────────────────────────────
+
+test("侧边栏 footer 的纵向排列由本插件自带，不靠别的插件的样式兜底", async () => {
+  // 上游那个容器是 display:flex（默认 row、不换行），每个 footer action 都是
+  // width:100% 的按钮 —— 装了两个以上就被挤成同行的半宽按钮，文字全被省略号吃掉。
+  // 这条 flex-direction:column 原先只写在 dsh-terminal-panel 里，于是「装了终端
+  // 面板的机器一切正常、只装市场 + 余额的机器上图标挤成一行」：一个插件的样式在
+  // 替别的插件兜底，而任何一个插件都可能被单独安装。四个 footer 插件各带一份。
+  //
+  // 判据要跳过注释行、还原反斜杠转义：本文件说的这段话里也有这串选择器，只 grep
+  // 源码的话，把规则删掉只留注释，测试照样绿。
+  const fs = await import("node:fs");
+  const path = await import("node:path");
+  const { fileURLToPath } = await import("node:url");
+  const client = path.join(path.dirname(fileURLToPath(import.meta.url)), "..", "lib", "client.js");
+  const css = fs.readFileSync(client, "utf8")
+    .split("\n")
+    .filter((line) => !/^\s*(\/\/|\*|\/\*)/.test(line))
+    .join("\n")
+    .replace(/\\"/g, '"');
+  assert.ok(
+    /\[class\*="footerActions"\]\{[^}]*flex-direction:column/.test(css),
+    "Git 插件必须自己注入 footerActions 的纵向排列规则"
+  );
+});
