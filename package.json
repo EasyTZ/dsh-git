@@ -1,7 +1,7 @@
 {
   "name": "@easytz/dsh-git",
   "version": "0.5.2",
-  "description": "Visual Git panel: changed files, staging, commits, push, branches, and per-commit detail",
+  "description": "Git 面板：查看文件改动、暂存、提交、推送、分支与提交详情（Visual Git panel: changed files, staging, commits, push, branches, and per-commit detail）",
   "type": "module",
   "main": "lib/index.js",
   "exports": {
