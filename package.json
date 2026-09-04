@@ -1,6 +1,6 @@
 {
   "name": "@easytz/dsh-git",
-  "version": "0.5.4",
+  "version": "0.5.5",
   "description": "Git 面板：看改动、暂存、提交、推送、切分支、翻历史，不用记命令。Visual Git panel for DeepSeek Harness: stage, commit, push, switch branches, browse history.",
   "type": "module",
   "main": "lib/index.js",

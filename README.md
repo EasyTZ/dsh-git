@@ -7,9 +7,12 @@
 
 ![Git 面板（示例数据）：改动、暂存、提交、推送、历史](docs/panel.png)
 
+<details open>
+<summary><b>中文</b></summary>
+
 ## 前置要求
 
-- dsh `>= 0.1.1-rc.2`（peer 依赖：`@deepseek-ai/cordis ^4.0.1`、`@deepseek-ai/dsh-host-webserver ^0.1.1-rc.2`、`@deepseek-ai/dsh-workspace ^0.1.1-rc.2`）
+- dsh `>= 0.1.1-rc.2`
 - 机器上装了 `git` 且在 `PATH` 里
 - `pnpm` 可用（`dsh plugin` 底层转发给 pnpm）
 
@@ -23,7 +26,7 @@
 dsh plugin --profile <name> add @easytz/dsh-git
 ```
 
-`<name>` 是**必填**的 profile 名，不能省略——桌面版通常是 `web`，TUI 是 `tui`；不确定就看 `$DSH_HOME/profiles/` 下的目录名。想钉死版本就写 `@easytz/dsh-git@0.5.4`。
+`<name>` 是**必填**的 profile 名，不能省略——桌面版通常是 `web`，TUI 是 `tui`；不确定就看 `$DSH_HOME/profiles/` 下的目录名。想钉死版本就写 `@easytz/dsh-git@0.5.5`。
 
 插件自带 `dsh.bundle` 层（`cordis.patch.yml`），`dsh plugin add` 会同时完成「装进去」和「注册激活」，**不需要手写 patch**。
 
@@ -81,9 +84,10 @@ dsh plugin --profile <name> remove @easytz/dsh-git
 
 目前只在 Windows 上验证过；插件代码本身没有平台分支，理论上 macOS / Linux 也能跑，欢迎反馈。
 
----
+</details>
 
-## English
+<details>
+<summary><b>English</b></summary>
 
 A third-party plugin for [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (dsh) that adds a **visual Git panel** to the sidebar — everyday Git without leaving dsh and without memorising commands.
 
@@ -103,7 +107,7 @@ From the command line:
 dsh plugin --profile <name> add @easytz/dsh-git
 ```
 
-`<name>` is **required** — your dsh profile (usually `web` for the desktop/web UI, `tui` for the TUI). Pin a version with `@easytz/dsh-git@0.5.4` if you want reproducibility. The package ships its own `dsh.bundle` layer, so `dsh plugin add` both installs **and** activates it; no hand-written patch needed.
+`<name>` is **required** — your dsh profile (usually `web` for the desktop/web UI, `tui` for the TUI). Pin a version with `@easytz/dsh-git@0.5.5` if you want reproducibility. The package ships its own `dsh.bundle` layer, so `dsh plugin add` both installs **and** activates it; no hand-written patch needed.
 
 Restart dsh — a **Git** button appears at the bottom of the sidebar.
 
@@ -130,6 +134,8 @@ dsh plugin --profile <name> remove @easytz/dsh-git
 - Rejected pushes (remote ahead) are reported, not auto-resolved — run `git pull` in a terminal.
 - Untracked files must be staged explicitly.
 - Verified on Windows only; the code has no platform-specific branches, so macOS/Linux should work. Feedback welcome.
+
+</details>
 
 ## 许可证 / License
 
