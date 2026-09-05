@@ -1,11 +1,15 @@
-# dsh-git
+<h1 align="center">dsh-git</h1>
+<p align="center"><b>在 DeepSeek Harness 里完成日常 Git 操作，不离开当前会话。</b></p>
+<p align="center">查看改动 · 逐文件暂存 · 提交与推送 · 切换分支 · 浏览历史</p>
+<p align="center">
+  <a href="https://www.npmjs.com/package/@easytz/dsh-git"><img alt="npm" src="https://img.shields.io/npm/v/@easytz/dsh-git?style=flat-square&color=4d6bfe"></a>
+  <img alt="dsh plugin" src="https://img.shields.io/badge/dsh-plugin-17223b?style=flat-square">
+  <img alt="platform" src="https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-2f855a?style=flat-square">
+  <img alt="license" src="https://img.shields.io/badge/license-MIT-8b5cf6?style=flat-square">
+</p>
+<p align="center"><img src="docs/panel.png" alt="Git 面板：改动、暂存、提交、推送与历史" width="460"></p>
 
-**Git 面板：看改动、暂存、提交、推送、切分支、翻历史，不用记命令。**
-**Visual Git panel for DeepSeek Harness: stage, commit, push, switch branches, browse history.**
-
-[DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)（下称 dsh）的第三方插件，在侧边栏加一个 Git 面板。
-
-![Git 面板（示例数据）：改动、暂存、提交、推送、历史](docs/panel.png)
+> Visual Git panel for [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness): stage, commit, push, switch branches and inspect history without leaving your session.
 
 <details open>
 <summary><b>中文</b></summary>
@@ -26,7 +30,7 @@
 dsh plugin --profile <name> add @easytz/dsh-git
 ```
 
-`<name>` 是**必填**的 profile 名，不能省略——桌面版通常是 `web`，TUI 是 `tui`；不确定就看 `$DSH_HOME/profiles/` 下的目录名。想钉死版本就写 `@easytz/dsh-git@0.5.5`。
+`<name>` 是**必填**的 profile 名，不能省略——桌面版通常是 `web`，TUI 是 `tui`；不确定就看 `$DSH_HOME/profiles/` 下的目录名。想钉死版本就写 `@easytz/dsh-git@0.5.6`。
 
 插件自带 `dsh.bundle` 层（`cordis.patch.yml`），`dsh plugin add` 会同时完成「装进去」和「注册激活」，**不需要手写 patch**。
 
@@ -82,7 +86,7 @@ dsh plugin --profile <name> remove @easytz/dsh-git
 
 ## 平台支持
 
-目前只在 Windows 上验证过；插件代码本身没有平台分支，理论上 macOS / Linux 也能跑，欢迎反馈。
+已在 Windows 与 macOS 上验证；插件代码没有平台分支，Linux 使用同一套 Git 命令接口。
 
 </details>
 
@@ -107,7 +111,7 @@ From the command line:
 dsh plugin --profile <name> add @easytz/dsh-git
 ```
 
-`<name>` is **required** — your dsh profile (usually `web` for the desktop/web UI, `tui` for the TUI). Pin a version with `@easytz/dsh-git@0.5.5` if you want reproducibility. The package ships its own `dsh.bundle` layer, so `dsh plugin add` both installs **and** activates it; no hand-written patch needed.
+`<name>` is **required** — your dsh profile (usually `web` for the desktop/web UI, `tui` for the TUI). Pin a version with `@easytz/dsh-git@0.5.6` if you want reproducibility. The package ships its own `dsh.bundle` layer, so `dsh plugin add` both installs **and** activates it; no hand-written patch needed.
 
 Restart dsh — a **Git** button appears at the bottom of the sidebar.
 
