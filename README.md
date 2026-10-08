@@ -36,6 +36,19 @@ dsh plugin --profile <name> add @easytz/dsh-git
 
 装完重启 dsh，侧边栏底部出现 Git 按钮。
 
+## 升级
+
+CLI 升级到最新版（不带版本号即可，会解析 npm 的 `latest`）：
+
+```sh
+dsh plugin --profile <name> add @easytz/dsh-git
+```
+
+- 已经装过旧版时，这条命令会把包替换成最新版；想钉死版本就写 `@easytz/dsh-git@0.5.8`。
+- 桌面版插件市场：市场里看到新版本直接点「更新」。
+- 升级后**重启 dsh 才生效**——换了新的插件代码，进程需要重新加载。
+- 刚发版后立刻升级可能仍解析到旧版本：那是 registry 元数据缓存（npm / pnpm 各自缓存，约几分钟），过一会儿重试，或直接钉新版本号绕过 `latest` 解析。
+
 ## 用法
 
 点侧边栏底部的 **Git** 按钮打开面板。
@@ -114,6 +127,19 @@ dsh plugin --profile <name> add @easytz/dsh-git
 `<name>` is **required** — your dsh profile (usually `web` for the desktop/web UI, `tui` for the TUI). Pin a version with `@easytz/dsh-git@0.5.7` if you want reproducibility. The package ships its own `dsh.bundle` layer, so `dsh plugin add` both installs **and** activates it; no hand-written patch needed.
 
 Restart dsh — a **Git** button appears at the bottom of the sidebar.
+
+### Upgrading
+
+Update to the latest release from the CLI (omitting the version resolves npm's `latest` tag):
+
+```sh
+dsh plugin --profile <name> add @easytz/dsh-git
+```
+
+- If an older version is already installed, this replaces it with the latest; pin a version with `@easytz/dsh-git@0.5.8` if you want a specific one.
+- Desktop plugin market: an update entry appears in the market when a new version is out.
+- **Restart dsh** after upgrading — the plugin code has changed and the process must reload it.
+- Right after a release, an upgrade may still resolve to the previous version: npm/pnpm cache registry metadata for a few minutes, so retry shortly, or pin the exact new version to bypass `latest` resolution.
 
 ### Usage
 
