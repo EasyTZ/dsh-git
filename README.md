@@ -16,7 +16,7 @@
 
 ## 前置要求
 
-- dsh `>= 0.1.1-rc.2`
+- dsh `>= 0.1.1-rc.2`：0.1.x 与 0.2.x 两条线都兼容（已适配 0.2.0-rc.2，最低 0.1.1-rc.2）
 - 机器上装了 `git` 且在 `PATH` 里
 - `pnpm` 可用（`dsh plugin` 底层转发给 pnpm）
 
@@ -30,7 +30,7 @@
 dsh plugin --profile <name> add @easytz/dsh-git
 ```
 
-`<name>` 是**必填**的 profile 名，不能省略——桌面版通常是 `web`，TUI 是 `tui`；不确定就看 `$DSH_HOME/profiles/` 下的目录名。想钉死版本就写 `@easytz/dsh-git@0.5.6`。
+`<name>` 是**必填**的 profile 名，不能省略——桌面版通常是 `web`，TUI 是 `tui`；不确定就看 `$DSH_HOME/profiles/` 下的目录名。想钉死版本就写 `@easytz/dsh-git@0.5.7`。
 
 插件自带 `dsh.bundle` 层（`cordis.patch.yml`），`dsh plugin add` 会同时完成「装进去」和「注册激活」，**不需要手写 patch**。
 
@@ -40,7 +40,7 @@ dsh plugin --profile <name> add @easytz/dsh-git
 
 点侧边栏底部的 **Git** 按钮打开面板。
 
-**选仓库.** 有多个工作区时，顶部「工作区」下拉切换。工作区根目录自己不是仓库、但下面的子目录各自是仓库时，会多出一个「仓库」下拉（见下面「一个工作区装了多个仓库？」）。
+**选仓库.** 有多个工作区时，顶部「工作区」下拉切换。工作区根目录自己不是仓库、但下面的子目录各自是仓库时，会多出一个「仓库」下拉（见下面「一个工作区装了多个仓库？」）。面板默认停在上次用过的工作区；有会话打开时会跟着当前会话所在的工作区走。
 
 **提交.** 提交框就在分支行下面，是面板里最顺手的位置：
 
@@ -97,7 +97,7 @@ A third-party plugin for [DeepSeek Harness](https://github.com/deepseek-ai/deeps
 
 ### Requirements
 
-- dsh `>= 0.1.1-rc.2`
+- dsh `>= 0.1.1-rc.2`: both the 0.1.x and 0.2.x lines are supported (adapted for 0.2.0-rc.2; 0.1.1-rc.2 is the floor)
 - `git` installed and on `PATH`
 - `pnpm` available (`dsh plugin` shells out to pnpm)
 
@@ -111,7 +111,7 @@ From the command line:
 dsh plugin --profile <name> add @easytz/dsh-git
 ```
 
-`<name>` is **required** — your dsh profile (usually `web` for the desktop/web UI, `tui` for the TUI). Pin a version with `@easytz/dsh-git@0.5.6` if you want reproducibility. The package ships its own `dsh.bundle` layer, so `dsh plugin add` both installs **and** activates it; no hand-written patch needed.
+`<name>` is **required** — your dsh profile (usually `web` for the desktop/web UI, `tui` for the TUI). Pin a version with `@easytz/dsh-git@0.5.7` if you want reproducibility. The package ships its own `dsh.bundle` layer, so `dsh plugin add` both installs **and** activates it; no hand-written patch needed.
 
 Restart dsh — a **Git** button appears at the bottom of the sidebar.
 
@@ -119,7 +119,7 @@ Restart dsh — a **Git** button appears at the bottom of the sidebar.
 
 Click the **Git** button to open the panel.
 
-- **Pick a repository.** A workspace dropdown appears when you have more than one workspace. If the workspace root isn't a repo but its immediate subdirectories are, a second "repository" dropdown lists them.
+- **Pick a repository.** A workspace dropdown appears when you have more than one workspace. If the workspace root isn't a repo but its immediate subdirectories are, a second "repository" dropdown lists them. The panel defaults to your last-used workspace, and follows the current session's workspace when one is open.
 - **Commit.** Stage files with the **+** next to each entry under *Changes* (**−** unstages), type a message, hit **Commit**. Untracked files are never staged for you — that is deliberate.
 - **Push.** Hit **Push ↑n**, where `n` is how far ahead of the remote you are.
 - **Switch branch.** Use the branch dropdown on the branch row; `↑n ↓n` next to it is ahead/behind.

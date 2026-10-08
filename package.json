@@ -1,6 +1,6 @@
 {
   "name": "@easytz/dsh-git",
-  "version": "0.5.6",
+  "version": "0.5.7",
   "description": "Git 面板：看改动、暂存、提交、推送、切分支、翻历史，不用记命令。Visual Git panel for DeepSeek Harness: stage, commit, push, switch branches, browse history.",
   "type": "module",
   "main": "lib/index.js",
@@ -24,17 +24,19 @@
       "platform": "web",
       "inject": [
         "@deepseek-ai/dsh-client-locale",
-        "@deepseek-ai/dsh-client-runtime",
-        "@deepseek-ai/dsh-client-ui-sidebar",
-        "@deepseek-ai/dsh-client-ui-layout"
+        "@deepseek-ai/dsh-client-ui-renderer",
+        "@deepseek-ai/dsh-api-workspace-controller",
+        "@deepseek-ai/dsh-api-session-controller",
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-client-ui-sidebar"
       ]
     }
   },
   "license": "MIT",
   "peerDependencies": {
     "@deepseek-ai/cordis": "^4.0.1",
-    "@deepseek-ai/dsh-host-webserver": "^0.1.1-rc.2",
-    "@deepseek-ai/dsh-workspace": "^0.1.1-rc.2"
+    "@deepseek-ai/dsh-host-webserver": "^0.1.1-rc.2 || ^0.2.0-rc.2",
+    "@deepseek-ai/dsh-workspace": "^0.1.1-rc.2 || ^0.2.0-rc.2"
   },
   "keywords": [
     "dsh-plugin",
